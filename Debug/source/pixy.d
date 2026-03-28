@@ -105,8 +105,7 @@ source/pixy.o source/pixy.d: ../source/pixy.c \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_ctimer.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_clock.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_gpio.h \
- C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_lpi2c.h \
- C:\Users\Cristian\Desktop\NxpCup\nxpcup\utilities\debug_console_lite/fsl_debug_console.h
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_lpi2c.h
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\source\mcux_config.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/pixy.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_common.h:
@@ -214,4 +213,3 @@ C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_ctimer.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_clock.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_gpio.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_lpi2c.h:
-C:\Users\Cristian\Desktop\NxpCup\nxpcup\utilities\debug_console_lite/fsl_debug_console.h:

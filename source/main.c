@@ -12,8 +12,10 @@
 #include "servo.h"
 #include "esc.h"
 
-#define MAX_VECTORS 10
+#include "line_follow.h"
 
+#define MAX_VECTORS 10
+#define MAX_STEER 40
 
 
 int main(void)
@@ -32,7 +34,7 @@ int main(void)
                 CTIMER0_PWM_2_CHANNEL,
                 GPIO0, 24U,
                 GPIO0, 27U);
-    HbridgeSpeed(&g_hbridge, SPEED_LEFT, SPEED_RIGHT);
+
 
 //    Esc esc1, esc2;
 //    EscInit(&esc1, CTIMER2_PERIPHERAL, CTIMER2_PWM_PERIOD_CH, kCTIMER_Match_1);
@@ -45,40 +47,39 @@ int main(void)
 //    TestServo();
     pixy_t cam1;
     pixy_init(&cam1, LPI2C2, 0x54U, &LP_FLEXCOMM2_RX_Handle, &LP_FLEXCOMM2_TX_Handle);
-    pixy_set_led(&cam1, 255, 0, 0);
+    pixy_set_led(&cam1, 255, 25, 25);
 
-   volatile double steer = 0;
+    volatile angle = 0 + STEERING_OFFSET;
+
+
+    Steer(steer);
+    HbridgeSpeed(&g_hbridge, 0, 0);
+
+    line l;
+
     while (1)
     {
-    	if (pixy_get_vectors(&cam1, vectors, MAX_VECTORS, &num_vectors) == kStatus_Success) {
-    	        double angle = 0.0;
-    	        for (size_t i = 0; i < num_vectors; i++) {
-    	            uint16_t x0 = vectors[4*i + 0];
-    	            uint16_t y0 = vectors[4*i + 1];
-    	            uint16_t x1 = vectors[4*i + 2];
-    	            uint16_t y1 = vectors[4*i + 3];
-    	            PRINTF("  [%2u] (%u,%u)->(%u,%u)\r\n", (unsigned)i, x0, y0, x1, y1);
-    	            double m = ((double)x0-(double)x1) / ((double)y0-(double)y1);
-    	            angle += m;
-    	        }
-    	        angle *= -1;
-    	        PRINTF("Angle: %u" , angle);
-    	        if(angle > 0)
-    	        	angle *= STEERING_P_RIGHT;
-    	        else{
-    	        	angle *= STEERING_P_LEFT;
-    	        }
-    	        if (angle > STEERING_LIMIT_RIGHT){
-    	        	angle = STEERING_LIMIT_RIGHT;
-    	        }
-    	        if (angle < STEERING_LIMIT_LEFT){
-					angle = STEERING_LIMIT_LEFT;
-				}
-    	        if(num_vectors !=0)
-    	        	Steer(angle + STEERING_OFFSET);
-    	    }
+    	if (pixy_get_vectors(&cam1, vectors, MAX_VECTORS, &num_vectors) == kStatus_Success)
+    	{
+			double angle = 0.0;
+			for (size_t i = 0; i < num_vectors; i++)
+			{
+				uint16_t x0 = vectors[4*i + 0];
+				uint16_t y0 = vectors[4*i + 1];
+				uint16_t x1 = vectors[4*i + 2];
+				uint16_t y1 = vectors[4*i + 3];
+				printf("  [%2u] (%u,%u)->(%u,%u)\r\n", (unsigned)i, x0, y0, x1, y1);
+			}
 
-        HbridgeSpeed(&g_hbridge, SPEED_LEFT, SPEED_RIGHT);
+			l = get_line(vectors, num_vectors);
 
+			if(num_vectors !=0)
+			{
+				move(l);
+			}
+		}
+
+
+    	SDK_DelayAtLeastUs(1000000, CLOCK_GetFreq(kCLOCK_CoreSysClk));
     }
 }

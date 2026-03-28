@@ -98,6 +98,7 @@ source/main.o source/main.d: ../source/main.c \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/clock_config.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_gpio.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/app.h \
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_pwm.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/peripherals.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_edma.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_edma_core.h \
@@ -110,7 +111,11 @@ source/main.o source/main.d: ../source/main.c \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_lpi2c.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_edma.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/pin_mux.h \
- C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/pixy.h
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/hbridge.h \
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/pixy.h \
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/Config.h \
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/servo.h \
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/esc.h
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\source\mcux_config.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\device/fsl_device_registers.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\device/MCXN947_cm33_core0.h:
@@ -210,6 +215,7 @@ C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/board.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/clock_config.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_gpio.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/app.h:
+C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_pwm.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/peripherals.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_edma.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_edma_core.h:
@@ -222,4 +228,8 @@ C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_lpi2c_edma.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_lpi2c.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\drivers/fsl_edma.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\board/pin_mux.h:
+C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/hbridge.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/pixy.h:
+C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/Config.h:
+C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/servo.h:
+C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/esc.h:
