@@ -49,10 +49,10 @@ int main(void)
     pixy_init(&cam1, LPI2C2, 0x54U, &LP_FLEXCOMM2_RX_Handle, &LP_FLEXCOMM2_TX_Handle);
     pixy_set_led(&cam1, 255, 25, 25);
 
-    volatile angle = 0 + STEERING_OFFSET;
+    volatile double angle = 0 + STEERING_OFFSET;
 
 
-    Steer(steer);
+    Steer(angle);
     HbridgeSpeed(&g_hbridge, 0, 0);
 
     line l;
@@ -68,18 +68,22 @@ int main(void)
 				uint16_t y0 = vectors[4*i + 1];
 				uint16_t x1 = vectors[4*i + 2];
 				uint16_t y1 = vectors[4*i + 3];
-				printf("  [%2u] (%u,%u)->(%u,%u)\r\n", (unsigned)i, x0, y0, x1, y1);
+//				printf("  [%2u] (%u,%u)->(%u,%u)\r\n", (unsigned)i, x0, y0, x1, y1);
 			}
 
 			l = get_line(vectors, num_vectors);
 
-			if(num_vectors !=0)
+			if(num_vectors >= 2)
 			{
 				move(l);
+			}
+			else
+			{
+				HbridgeSpeed(&g_hbridge, 0, 0);
 			}
 		}
 
 
-    	SDK_DelayAtLeastUs(1000000, CLOCK_GetFreq(kCLOCK_CoreSysClk));
+    	SDK_DelayAtLeastUs(400000, CLOCK_GetFreq(kCLOCK_CoreSysClk));
     }
 }

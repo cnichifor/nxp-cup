@@ -6,6 +6,7 @@
 C_SRCS += \
 ../source/esc.c \
 ../source/hbridge.c \
+../source/line_follow.c \
 ../source/main.c \
 ../source/pixy.c \
 ../source/semihost_hardfault.c \
@@ -15,6 +16,7 @@ C_SRCS += \
 C_DEPS += \
 ./source/esc.d \
 ./source/hbridge.d \
+./source/line_follow.d \
 ./source/main.d \
 ./source/pixy.d \
 ./source/semihost_hardfault.d \
@@ -24,6 +26,7 @@ C_DEPS += \
 OBJS += \
 ./source/esc.o \
 ./source/hbridge.o \
+./source/line_follow.o \
 ./source/main.o \
 ./source/pixy.o \
 ./source/semihost_hardfault.o \
@@ -43,7 +46,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/esc.d ./source/esc.o ./source/hbridge.d ./source/hbridge.o ./source/main.d ./source/main.o ./source/pixy.d ./source/pixy.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/servo.d ./source/servo.o ./source/simple_movement.d ./source/simple_movement.o
+	-$(RM) ./source/esc.d ./source/esc.o ./source/hbridge.d ./source/hbridge.o ./source/line_follow.d ./source/line_follow.o ./source/main.d ./source/main.o ./source/pixy.d ./source/pixy.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/servo.d ./source/servo.o ./source/simple_movement.d ./source/simple_movement.o
 
 .PHONY: clean-source
 

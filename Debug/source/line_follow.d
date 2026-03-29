@@ -1,5 +1,7 @@
-source/main.o source/main.d: ../source/main.c \
+source/line_follow.o source/line_follow.d: ../source/line_follow.c \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\source\mcux_config.h \
+ ../source/line_follow.h \
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/config.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\device/fsl_device_registers.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\device/MCXN947_cm33_core0.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\device\periph/PERI_ADC.h \
@@ -115,10 +117,10 @@ source/main.o source/main.d: ../source/main.c \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/pixy.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/Config.h \
  C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/servo.h \
- C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/esc.h \
- ../source/line_follow.h \
- C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/config.h
+ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/esc.h
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\source\mcux_config.h:
+../source/line_follow.h:
+C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/config.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\device/fsl_device_registers.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\device/MCXN947_cm33_core0.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\device\periph/PERI_ADC.h:
@@ -235,5 +237,3 @@ C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/pixy.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/Config.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/servo.h:
 C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/esc.h:
-../source/line_follow.h:
-C:\Users\Cristian\Desktop\NxpCup\nxpcup\include/config.h:
