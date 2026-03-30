@@ -73,7 +73,7 @@ int main(void)
 
 			l = get_line(vectors, num_vectors);
 
-			if(num_vectors >= 2)
+			if(num_vectors != 0)
 			{
 				move(l);
 			}
@@ -84,6 +84,6 @@ int main(void)
 		}
 
 
-    	SDK_DelayAtLeastUs(400000, CLOCK_GetFreq(kCLOCK_CoreSysClk));
+    	SDK_DelayAtLeastUs(4000, CLOCK_GetFreq(kCLOCK_CoreSysClk));
     }
 }
