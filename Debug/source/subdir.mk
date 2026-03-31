@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../source/esc.c \
+../source/filter.c \
 ../source/hbridge.c \
 ../source/line_follow.c \
 ../source/main.c \
@@ -15,6 +16,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./source/esc.d \
+./source/filter.d \
 ./source/hbridge.d \
 ./source/line_follow.d \
 ./source/main.d \
@@ -25,6 +27,7 @@ C_DEPS += \
 
 OBJS += \
 ./source/esc.o \
+./source/filter.o \
 ./source/hbridge.o \
 ./source/line_follow.o \
 ./source/main.o \
@@ -46,7 +49,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/esc.d ./source/esc.o ./source/hbridge.d ./source/hbridge.o ./source/line_follow.d ./source/line_follow.o ./source/main.d ./source/main.o ./source/pixy.d ./source/pixy.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/servo.d ./source/servo.o ./source/simple_movement.d ./source/simple_movement.o
+	-$(RM) ./source/esc.d ./source/esc.o ./source/filter.d ./source/filter.o ./source/hbridge.d ./source/hbridge.o ./source/line_follow.d ./source/line_follow.o ./source/main.d ./source/main.o ./source/pixy.d ./source/pixy.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/servo.d ./source/servo.o ./source/simple_movement.d ./source/simple_movement.o
 
 .PHONY: clean-source
 

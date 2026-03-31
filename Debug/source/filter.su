@@ -1,0 +1,4 @@
+../source/filter.c:3:8:x_at_y	56	static
+../source/filter.c:11:5:crosses_y_ref	24	static
+../source/filter.c:16:8:len_sq	64	static
+../source/filter.c:23:6:pick_left_right_vectors	88	static

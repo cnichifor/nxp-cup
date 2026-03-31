@@ -79,11 +79,11 @@ int main(void)
 			}
 			else
 			{
-				HbridgeSpeed(&g_hbridge, 0, 0);
+				HbridgeSpeed(&g_hbridge, 28, 28);
 			}
 		}
 
 
-    	SDK_DelayAtLeastUs(4000, CLOCK_GetFreq(kCLOCK_CoreSysClk));
+    	SDK_DelayAtLeastUs(100, CLOCK_GetFreq(kCLOCK_CoreSysClk));
     }
 }
